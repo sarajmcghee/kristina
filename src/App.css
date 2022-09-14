@@ -1,38 +1,128 @@
-.App {
-  text-align: center;
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+ padding: 0;
+ /* height:1000px; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card-title {
+  font: 500 1.25rem "Lobster", cursive;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.card-img-overlay .card-title {
   color: white;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.App-link {
-  color: #61dafb;
+ .navbar {
+  background-color: white; 
+  color: black;
+} 
+
+.navbar-nav > li {
+  padding-left: 50px;
+  padding-right: 50px; 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.nav-link{
+  font-family: 'Open Sans', sans-serif;
+  color: black !important;
+}
+
+.link {
+  color: black;
+}
+.link:hover {
+   color: #00F
+}
+
+
+
+
+.App {
+  color: white;
+  text-align: center;
+
+}
+
+
+
+
+ .footer {
+  background-color: white;
+  border-top:2px solid gray;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  color: black;
+  font-size: 25px;
+} 
+
+
+.selectableImg {
+  border: solid 1px transparent;
+  margin: 10px;
+}
+
+.selectableImg.selected {
+  border: solid 1px blue;
+}
+
+.body_image{
+  height:800px;
+  width:auto;
+ }
+
+ #tsparticles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+
+
+
+.jumbotron h2 {
+  margin-top:0; 
+  color:black;
+}
+.jumbotron {
+  position:relative;
+  padding-top:50px;
+  padding-bottom:50px;
+}
+.jumbotron .container {
+  position:relative;
+  z-index:0;
+}
+
+@media screen and (max-width: 768px) {
+  .jumbotron {
+    padding-top:20px;
+    padding-bottom:20px;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+
+
+.blockquote p {
+  display: inline-block;
+}
+
+.my-node-enter {
+  opacity: 0;
+}
+.my-node-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.my-node-exit {
+  opacity: 1;
+}
+.my-node-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
 }
