@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
+
+
 
 
 class Book extends Component {
@@ -16,8 +20,8 @@ class Book extends Component {
             <div className="jumbotron jumbotron-billboard">
             <div className="col align-center">
           
+            <Button color="secondary">Book Your PhotoShoot</Button>{'Calender'}
 
-                  
             </div>
             </div>
 

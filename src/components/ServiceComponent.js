@@ -1,29 +1,57 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { CartState } from '../context/Context';
+import SingleService from './SingleServiceComponent';
+import Filters from './FiltersComponent';
 
+const Service = () => {
 
-class Service extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            selectedNavbar: null
-        };
+    const {
+        state: { products },
+        productState: { sort, byStock, byFastDelivery, byRating, searchQuery },
+      } = CartState();
+ const transformProducts = () => {
+    let sortedProducts = products;
+
+    if (sort) {
+      sortedProducts = sortedProducts.sort((a, b) =>
+        sort === "lowToHigh" ? a.price - b.price : b.price - a.price
+      );
     }
 
-
-    render() {
-
-        console.log("here");
-        return (
-            <div className="jumbotron jumbotron-billboard">
-            <div className="col align-center">
-          
-
-                  
-            </div>
-            </div>
-
-        );
+    if (!byStock) {
+      sortedProducts = sortedProducts.filter((prod) => prod.inStock);
     }
-}
+
+    if (byFastDelivery) {
+      sortedProducts = sortedProducts.filter((prod) => prod.fastDelivery);
+    }
+
+    if (byRating) {
+      sortedProducts = sortedProducts.filter(
+        (prod) => prod.ratings >= byRating
+      );
+    }
+
+    if (searchQuery) {
+      sortedProducts = sortedProducts.filter((prod) =>
+        prod.name.toLowerCase().includes(searchQuery)
+      );
+    }
+
+    return sortedProducts;
+  };
+
+  return (
+    <div className="services">
+      {/* <Filters /> */}
+      <div className="productContainer">
+        {transformProducts().map((prod) => (
+          <SingleService prod={prod} key={prod.id} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 
 export default Service;

@@ -6,6 +6,7 @@ import Book from '../components/BookComponent';
 import Reviews from '../components/ReviewsComponent';
 import Faqs from '../components/FaqsComponent';
 import Giftcards from '../components/GiftcardComponent';
+import Cart from '../components/CartComponent';
 import Home from '../components/HomeComponent';
 
 export default class routerURL extends Component {
@@ -19,6 +20,7 @@ export default class routerURL extends Component {
                 <Route exact path='/reviews' element={<Reviews />} />
                 <Route exact path='/faqs' element={<Faqs />} />
                 <Route exact path='/giftcards' element={<Giftcards />} /> 
+                <Route exact path='/cart' element={<Cart />} /> 
             </Routes>
 
         );

@@ -7,6 +7,8 @@ import camera from '../assets/images/camera.jpg'
 import family from '../assets/images/family.jpg'
 import handsphoto from '../assets/images/handsphoto.jpg'
 
+import DrawingComponent from './DrawingComponent';
+
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -19,6 +21,7 @@ class Home extends Component {
     render() {
 
         return (
+            <div>
             <FadeTransform
             in
             transformProps={{
@@ -29,13 +32,21 @@ class Home extends Component {
                 </div>
                 <div className="row justify-content-md-center">
                     <div className="col justify-self-center">
-                    <Media object src={camera} alt='camera' />
+                     <div className="row justify-content-md-center">
+                    <div class="col col-lg">
+                        <DrawingComponent />
+                    </div>
+                </div>
                     </div>
                 </div>
                 <div className="row p-5">
                 </div>
             </div>
             </FadeTransform>
+            <div className="container">
+                Kristina Armstrong Wedding
+            </div>
+            </div>
         );
     }
 }
